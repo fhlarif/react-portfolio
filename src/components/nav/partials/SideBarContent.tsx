@@ -1,6 +1,6 @@
 import { IHandleClick, INav } from "../../../interfaces/sidebar";
 
-export const Nav = ({ handleNavClick }: IHandleClick): JSX.Element => {
+export const SideBarContent = ({ handleNavClick }: IHandleClick): JSX.Element => {
   const links: INav[] = [
     { url: "#home", title: "Home", active: true },
     { url: "#about", title: "About", active: true },
@@ -19,4 +19,4 @@ export const Nav = ({ handleNavClick }: IHandleClick): JSX.Element => {
   );
 };
 
-export default Nav;
+export default SideBarContent;

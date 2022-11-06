@@ -1,15 +1,8 @@
-import Home from "./components/Home";
-import Sidebar from "./components/sidebar/Sidebar";
-import { IHNavClick } from "./interfaces/sidebar";
+import Home from "./components/contents/Home";
 
 const App = () => {
-  const handleNavClick: IHNavClick = (url: string, active: boolean): void => {
-    console.log("from app", url, active);
-  };
-
   return (
-    <div className="grid grid-cols-2 lg:grid-cols-4 ">
-      <Sidebar handleNavClick={handleNavClick} />
+    <div className=" h-screen flex justify-center sm:items-center ">
       <Home />
     </div>
   );

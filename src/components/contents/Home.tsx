@@ -1,10 +1,26 @@
+import { useState } from "react";
 import Navbar from "../nav/Navbar";
-import { Profile } from "../nav/partials/Profile";
+import { Profile } from "./Profile";
 
 const Home = () => {
+  interface IOpen {
+    profile: boolean;
+    resume: boolean;
+    portfolio: boolean;
+    contact: boolean;
+  }
+
+  const [open, setOpen] = useState<IOpen>({
+    profile: true,
+    resume: false,
+    portfolio: false,
+    contact: false,
+  });
+
   return (
-    <div className="grid bg-slate-800 rounded-xl">
-      <Profile />
+    <div className="grid w-full bg-slate-800 rounded-xl">
+      {open.profile ? <Profile /> : null}
+
       <Navbar />
     </div>
   );

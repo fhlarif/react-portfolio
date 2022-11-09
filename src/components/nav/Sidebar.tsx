@@ -1,6 +1,6 @@
 import { IHandleClick } from "../../interfaces/sidebar";
 import { SideBarContent } from "./partials/SideBarContent";
-import { Profile } from "./partials/Profile";
+import { Profile } from "../contents/Profile";
 
 const Sidebar = ({ handleNavClick }: IHandleClick): JSX.Element => {
   return (

@@ -1,9 +1,14 @@
 import { FaLocationArrow, FaFacebook, FaGithub, FaGitlab, FaLinkedin } from "react-icons/fa";
 import { AiFillMail } from "react-icons/ai";
+import { motion } from "framer-motion";
 
 export const Profile = (): JSX.Element => {
   return (
-    <header className="flex px-2 md:my-4 md:flex-row flex-col justify-center">
+    <motion.header
+      initial={{ opacity: 0, scale: 0.5 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.4 }}
+      className="flex px-2 md:my-4 md:flex-row flex-col justify-center">
       <div className="flex gap-4 flex-col">
         <img className=" self-center h-32 rounded-full" src="/assets/Fathul Arif.png" alt="Fathul Arif" />
         <p className="font-bold text-center uppercase text-lg">
@@ -14,7 +19,7 @@ export const Profile = (): JSX.Element => {
       <div className="md:my-10">
         <About />
       </div>
-    </header>
+    </motion.header>
   );
 };
 

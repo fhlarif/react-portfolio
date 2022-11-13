@@ -1,10 +1,14 @@
-import React from "react";
+import { motion } from "framer-motion";
 
 const Resume = () => {
   return (
-    <div className="uppercase tracking-wide font-bold ">
+    <motion.div
+      initial={{ opacity: 0, scale: 0.5 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.4 }}
+      className="uppercase tracking-wide font-bold p-4 ">
       <span className="text-rose-300">Resume</span>
-    </div>
+    </motion.div>
   );
 };
 

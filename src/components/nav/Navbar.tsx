@@ -1,4 +1,6 @@
 import { ReactNode } from "react";
+import { AiFillContacts, AiOutlineFundProjectionScreen, AiOutlineMessage } from "react-icons/ai";
+import { FaPaperclip } from "react-icons/fa";
 import { IOpen } from "../../interfaces/Iopen";
 
 type Props = {
@@ -33,16 +35,45 @@ const Navbar = ({ open, handleOpen }: Props): JSX.Element => {
   return (
     <nav className="m-4 flex md:flex-row flex-col gap-2 uppercase">
       <div className={"w-full cursor-pointer"} onClick={() => handleOpen?.("profile")}>
-        <Nav open={open}>Profile</Nav>
+        <Nav open={open}>
+          {" "}
+          <div className="flex gap-2">
+            <span className="text-amber-500">
+              <AiFillContacts size={25} />
+            </span>
+            Profile
+          </div>
+        </Nav>
       </div>
       <div className={"w-full cursor-pointer"} onClick={() => handleOpen?.("resume")}>
-        <Nav open={open}>Resume</Nav>
+        <Nav open={open}>
+          <div className="flex gap-2">
+            <span className="text-amber-500">
+              <FaPaperclip size={25} />
+            </span>
+            Resume
+          </div>
+        </Nav>
       </div>
       <div className={"w-full cursor-pointer"} onClick={() => handleOpen?.("portfolio")}>
-        <Nav open={open}>Portfolio</Nav>
+        <Nav open={open}>
+          <div className="flex gap-2">
+            <span className="text-amber-500">
+              <AiOutlineFundProjectionScreen size={25} />
+            </span>
+            Resume
+          </div>
+        </Nav>
       </div>
       <div className={"w-full cursor-pointer"} onClick={() => handleOpen?.("contact")}>
-        <Nav open={open}>Contact</Nav>
+        <Nav open={open}>
+          <div className="flex gap-2">
+            <span className="text-amber-500">
+              <AiOutlineMessage size={25} />
+            </span>
+            Contact
+          </div>
+        </Nav>
       </div>
     </nav>
   );

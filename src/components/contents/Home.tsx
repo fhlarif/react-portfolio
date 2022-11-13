@@ -24,49 +24,51 @@ const Home = () => {
       setOpen({ ...open, profile: false, resume: false, portfolio: false, contact: true });
     }
   };
-  // console.log(typeof open.profile, "home");
 
-  return (
-    <div className="grid w-full bg-slate-800 rounded-xl">
-      {open.profile ? (
-        <>
-          <Profile />
-          <motion.div
-            initial={{ opacity: 0, scale: 0.5, translateY: -100 }}
-            animate={{ opacity: 1, scale: 1, translateY: 1 }}
-            transition={{ duration: 0.4 }}>
-            <Navbar open={open} handleOpen={handleOpen} />
-          </motion.div>
-        </>
-      ) : null}
+  const navbar = (
+    <motion.div
+      initial={{ opacity: 0, scale: 0.5, translateY: -100 }}
+      animate={{ opacity: 1, scale: 1, translateY: 1 }}
+      transition={{ duration: 0.4 }}>
+      <Navbar open={open} handleOpen={handleOpen} />
+    </motion.div>
+  );
 
-      {open.profile !== true ? (
-        <motion.div
-          initial={{ opacity: 0, scale: 0.5, translateY: -100 }}
-          animate={{ opacity: 1, scale: 1, translateY: 1 }}
-          transition={{ duration: 0.4 }}
-          className="px-4 pt-4">
-          <p className="font-extrabold uppercase  font-sans text-lg tracking-wide">FATHUL ARIF KAMARUDIN</p>
-          <p className="italic text-md tracking-wide pt-2 text-amber-400">
-            Take what is given freely, enjoin what is good, and turn away from the ignorant.(7:199)
-          </p>
-        </motion.div>
+  const quote = (
+    <motion.div
+      initial={{ opacity: 0, scale: 0.5, translateY: -100 }}
+      animate={{ opacity: 1, scale: 1, translateY: 1 }}
+      transition={{ duration: 0.4 }}
+      className="px-4 pt-4">
+      {open.resume !== true ? (
+        <p className="font-extrabold uppercase  font-sans text-lg tracking-wide">FATHUL ARIF KAMARUDIN</p>
       ) : (
         ""
       )}
+      <p className="italic text-md tracking-wide pt-2 text-amber-400">
+        Take what is given freely, enjoin what is good, and turn away from the ignorant.(7:199)
+      </p>
+    </motion.div>
+  );
+
+  return (
+    <main className="grid w-full bg-slate-800 rounded-xl">
+      {open.profile ? (
+        <>
+          <Profile />
+          {navbar}
+        </>
+      ) : null}
+
+      {open.profile !== true ? quote : ""}
 
       {open.resume ? (
         <>
-          <motion.div
-            initial={{ opacity: 0, scale: 0.5, translateY: -100 }}
-            animate={{ opacity: 1, scale: 1, translateY: 1 }}
-            transition={{ duration: 0.4 }}>
-            <Navbar open={open} handleOpen={handleOpen} />
-          </motion.div>
+          {navbar}
           <Resume />
         </>
       ) : null}
-    </div>
+    </main>
   );
 };
 

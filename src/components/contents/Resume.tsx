@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
-import { AiFillMail } from "react-icons/ai";
-import { FaLocationArrow } from "react-icons/fa";
+import { AiFillMail, AiOutlineDatabase } from "react-icons/ai";
+import { FaLinux, FaLocationArrow } from "react-icons/fa";
 import { IActivity, IBioInfo, IExpInfo } from "../../interfaces/IResume";
 
 const bioinfo: IBioInfo = {
@@ -66,8 +66,46 @@ const activityinfo: IActivity[] = [
   },
 ];
 
+type TSkill1 = {
+  title: string;
+};
+
+const skill1data: TSkill1[] = [
+  {
+    title: "git",
+  },
+  {
+    title: "mvc",
+  },
+  {
+    title: "spa",
+  },
+  {
+    title: "mpa",
+  },
+  {
+    title: "cms",
+  },
+];
+
+type TSkillTech = {
+  title: string;
+  icon: JSX.Element;
+};
+
+const skilltechdata: TSkillTech[] = [
+  {
+    title: "linux / unix",
+    icon: <FaLinux size={25} />,
+  },
+  {
+    title: "MYSQL / MARIADB / POSTGRESQL",
+    icon: <AiOutlineDatabase size={25} />,
+  },
+];
+
 const bio = (
-  <section className="w-full grid md:grid-cseols-2">
+  <section className="w-full">
     <article className="flex flex-col items-start">
       <h2 className="uppercase font-sans font-extrabold text-xl text-gray-200">
         {bioinfo.name.slice(0, 11)} <span className="text-amber-400">{bioinfo.name.slice(11)}</span>
@@ -93,11 +131,12 @@ const bio = (
 );
 
 const experience = (
-  <section className="mt-8 w-full ">
+  <section className="my-8 w-full  ">
+    <a href="#activity">Test</a>
     <h3 className="p-2 bg-amber-900 uppercase">Experience</h3>
     {experienceinfo.map((expinfo, key) => {
       return (
-        <div key={key} className="my-8 ">
+        <div key={key} className="mt-8 ">
           <span className="rounded-full bg-red-800 py-1 px-2 ">{expinfo.year}</span>
           <h4 className="my-3 px-1">{expinfo.position}</h4>
           <p className="text-sm text-gray-400 leading-relaxed tracking-wider">{expinfo.description}</p>
@@ -108,11 +147,13 @@ const experience = (
 );
 
 const activiy = (
-  <section className="mt-8 w-full ">
-    <h3 className="p-2 bg-amber-900 uppercase">Activity</h3>
+  <section className="w-full ">
+    <h3 id="activity" className="p-2 bg-amber-900 uppercase">
+      Activity
+    </h3>
     {activityinfo.map((actinfo, key) => {
       return (
-        <div key={key} className="my-8 ">
+        <div key={key} className="mt-8 ">
           <span className="rounded-full bg-red-800 py-1 px-2 ">{actinfo.year}</span>
 
           {actinfo.infos.map((ai, key) => {
@@ -129,16 +170,54 @@ const activiy = (
   </section>
 );
 
+const skill_1 = (
+  <section className="w-full">
+    <article className="flex flex-wrap gap-1 justify-between">
+      {skill1data.map((s1, key) => {
+        return (
+          <div key={key} className="uppercase text-xl rounded-full border-4 border-red-500 py-3 p-2 h-full">
+            <span className="p-1">{s1.title}</span>
+          </div>
+        );
+      })}
+    </article>
+  </section>
+);
+
+const skill_tech = (
+  <section className="w-full">
+    <h3 id="techskill" className="p-2 my-8 bg-amber-900 uppercase">
+      Technical Skill
+    </h3>
+    <article className="flex flex-wrap gap-1 justify-between">
+      {skilltechdata.map((st, key) => {
+        return (
+          <div key={key} className="uppercase text-md flex flex-wrap gap-2 mx-auto ">
+            <span className="p-1">{st.title}</span>
+            <span className="p-1 text-amber-600">{st.icon}</span>
+          </div>
+        );
+      })}
+    </article>
+  </section>
+);
+
 const Resume = (): JSX.Element => {
   return (
     <motion.div
       initial={{ opacity: 0, scale: 0.5 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.4 }}
-      className="w-full tracking-wide font-bold p-4 ">
-      {bio}
-      {experience}
-      {activiy}
+      className="w-full gap-4 h-[44rem] grid md:grid-cols-2  tracking-wide font-bold p-4 ">
+      <div>
+        {bio}
+        {experience}
+        {activiy}
+      </div>
+      <div>
+        {skill_1}
+        {skill_tech}
+      </div>
     </motion.div>
   );
 };

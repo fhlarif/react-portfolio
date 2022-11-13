@@ -1,25 +1,40 @@
 import { ReactNode } from "react";
+import { motion } from "framer-motion";
 
 type Props = {
+  handleOpen?: (e: string) => void;
   children?: ReactNode;
 };
 
-const Li = ({ children }: Props) => {
+const Nav = ({ children }: Props) => {
   return (
-    <li className="hover:underline hover:decoration-amber-500 underline-offset-8 hover:text-amber-500 ">{children}</li>
+    <ul className="mt-2 p-4 bg-gray-700 hover:-translate-y-1  hover:underline text-center hover:decoration-amber-500 underline-offset-8 hover:text-amber-500 flex h-14 md:justify-between w-full md:flex-row items-center flex-col justify-center">
+      <li>{children}</li>
+    </ul>
   );
 };
 
-const Ul: JSX.Element = (
-  <ul className="flex md:justify-between w-full md:flex-row items-center flex-col justify-center">
-    <Li>Home</Li>
-    <Li>Resume</Li>
-    <Li>Resume</Li>
-  </ul>
-);
-
-const Navbar = (): JSX.Element => {
-  return <nav className="mt-4 p-4 bg-gray-700  flex h-14 items-center w-full ">{Ul}</nav>;
+const Navbar = ({ handleOpen }: Props): JSX.Element => {
+  return (
+    <motion.nav
+      initial={{ opacity: 0, scale: 0.5 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.4 }}
+      className="m-4 flex md:flex-row flex-col gap-2">
+      <div className="w-full cursor-pointer" onClick={() => handleOpen?.("profile")}>
+        <Nav>Profile</Nav>
+      </div>
+      <div className="w-full cursor-pointer" onClick={() => handleOpen?.("resume")}>
+        <Nav>Resume</Nav>
+      </div>
+      <div className="w-full cursor-pointer" onClick={() => handleOpen?.("portfolio")}>
+        <Nav>Portfolio</Nav>
+      </div>
+      <div className="w-full cursor-pointer" onClick={() => handleOpen?.("contact")}>
+        <Nav>Contact</Nav>
+      </div>
+    </motion.nav>
+  );
 };
 
 export default Navbar;

@@ -1,39 +1,50 @@
 import { ReactNode } from "react";
-import { motion } from "framer-motion";
+import { IOpen } from "../../interfaces/Iopen";
 
 type Props = {
+  open?: IOpen;
   handleOpen?: (e: string) => void;
   children?: ReactNode;
 };
 
-const Nav = ({ children }: Props) => {
+const Nav = ({ open, children }: Props) => {
+  const navstyle: string =
+    "mt-2 p-4 hover:-translate-y-1 hover:underline text-center hover:decoration-amber-500 underline-offset-8 hover:text-amber-500 flex h-14 md:justify-between w-full md:flex-row items-center flex-col justify-center";
+
+  let isopen: string = "bg-gray-700";
+
+  if (
+    (open?.profile && children === "Profile") ||
+    (open?.resume && children === "Resume") ||
+    (open?.portfolio && children === "Portfolio") ||
+    (open?.contact && children === "Contact")
+  ) {
+    isopen = "bg-gray-600";
+  }
+
   return (
-    <ul className="mt-2 p-4 bg-gray-700 hover:-translate-y-1  hover:underline text-center hover:decoration-amber-500 underline-offset-8 hover:text-amber-500 flex h-14 md:justify-between w-full md:flex-row items-center flex-col justify-center">
+    <ul className={navstyle + " " + isopen}>
       <li>{children}</li>
     </ul>
   );
 };
 
-const Navbar = ({ handleOpen }: Props): JSX.Element => {
+const Navbar = ({ open, handleOpen }: Props): JSX.Element => {
   return (
-    <motion.nav
-      initial={{ opacity: 0, scale: 0.5 }}
-      animate={{ opacity: 1, scale: 1 }}
-      transition={{ duration: 0.4 }}
-      className="m-4 flex md:flex-row flex-col gap-2">
-      <div className="w-full cursor-pointer" onClick={() => handleOpen?.("profile")}>
-        <Nav>Profile</Nav>
+    <nav className="m-4 flex md:flex-row flex-col gap-2 uppercase">
+      <div className={"w-full cursor-pointer"} onClick={() => handleOpen?.("profile")}>
+        <Nav open={open}>Profile</Nav>
       </div>
-      <div className="w-full cursor-pointer" onClick={() => handleOpen?.("resume")}>
-        <Nav>Resume</Nav>
+      <div className={"w-full cursor-pointer"} onClick={() => handleOpen?.("resume")}>
+        <Nav open={open}>Resume</Nav>
       </div>
-      <div className="w-full cursor-pointer" onClick={() => handleOpen?.("portfolio")}>
-        <Nav>Portfolio</Nav>
+      <div className={"w-full cursor-pointer"} onClick={() => handleOpen?.("portfolio")}>
+        <Nav open={open}>Portfolio</Nav>
       </div>
-      <div className="w-full cursor-pointer" onClick={() => handleOpen?.("contact")}>
-        <Nav>Contact</Nav>
+      <div className={"w-full cursor-pointer"} onClick={() => handleOpen?.("contact")}>
+        <Nav open={open}>Contact</Nav>
       </div>
-    </motion.nav>
+    </nav>
   );
 };
 

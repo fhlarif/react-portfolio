@@ -1,16 +1,11 @@
 import { useState } from "react";
+import { IOpen } from "../../interfaces/Iopen";
 import Navbar from "../nav/Navbar";
 import { Profile } from "./Profile";
 import Resume from "./Resume";
+import { motion } from "framer-motion";
 
 const Home = () => {
-  interface IOpen {
-    profile: boolean;
-    resume: boolean;
-    portfolio: boolean;
-    contact: boolean;
-  }
-
   const [open, setOpen] = useState<IOpen>({
     profile: true,
     resume: false,
@@ -29,19 +24,46 @@ const Home = () => {
       setOpen({ ...open, profile: false, resume: false, portfolio: false, contact: true });
     }
   };
+  // console.log(typeof open.profile, "home");
 
   return (
     <div className="grid w-full bg-slate-800 rounded-xl">
       {open.profile ? (
         <>
           <Profile />
-          <Navbar handleOpen={handleOpen} />
+          <motion.div
+            initial={{ opacity: 0, scale: 0.5, translateY: -100 }}
+            animate={{ opacity: 1, scale: 1, translateY: 1 }}
+            transition={{ duration: 0.4 }}>
+            <Navbar open={open} handleOpen={handleOpen} />
+          </motion.div>
         </>
       ) : null}
 
+      {open.profile !== true ? (
+        <motion.div
+          initial={{ opacity: 0, scale: 0.5, translateY: -100 }}
+          animate={{ opacity: 1, scale: 1, translateY: 1 }}
+          transition={{ duration: 0.4 }}
+          className="px-4 pt-4">
+          <p className="font-extrabold uppercase  font-sans text-lg tracking-wide">FATHUL ARIF KAMARUDIN</p>
+          <p className="italic text-md tracking-wide pt-2 text-amber-400">
+            Take what is given freely, enjoin what is good, and turn away from the ignorant.(7:199)
+          </p>
+        </motion.div>
+      ) : (
+        ""
+      )}
+
       {open.resume ? (
         <>
-          <Navbar handleOpen={handleOpen} /> <Resume />
+          <motion.div
+            initial={{ opacity: 0, scale: 0.5, translateY: -100 }}
+            animate={{ opacity: 1, scale: 1, translateY: 1 }}
+            transition={{ duration: 0.4 }}>
+            <Navbar open={open} handleOpen={handleOpen} />
+          </motion.div>
+          <Resume />
         </>
       ) : null}
     </div>

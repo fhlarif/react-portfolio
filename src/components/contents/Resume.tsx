@@ -1,6 +1,16 @@
 import { motion } from "framer-motion";
-import { AiFillMail, AiOutlineDatabase } from "react-icons/ai";
-import { FaLinux, FaLocationArrow } from "react-icons/fa";
+import { AiFillMail } from "react-icons/ai";
+import { FaCentos, FaLaravel, FaLinux, FaLocationArrow } from "react-icons/fa";
+import {
+  Postgresql,
+  Livewire,
+  Alpinedotjs,
+  Tailwindcss,
+  ReactJs,
+  Vuedotjs,
+  Docker,
+  Redux,
+} from "@icons-pack/react-simple-icons";
 import { IActivity, IBioInfo, IExpInfo } from "../../interfaces/IResume";
 
 const bioinfo: IBioInfo = {
@@ -84,7 +94,7 @@ const skill1data: TSkill1[] = [
     title: "mpa",
   },
   {
-    title: "cms",
+    title: "api",
   },
 ];
 
@@ -95,12 +105,48 @@ type TSkillTech = {
 
 const skilltechdata: TSkillTech[] = [
   {
-    title: "linux / unix",
-    icon: <FaLinux size={25} />,
+    title: "Laravel",
+    icon: <FaLaravel size={38} />,
   },
   {
-    title: "MYSQL / MARIADB / POSTGRESQL",
-    icon: <AiOutlineDatabase size={25} />,
+    title: "Livewire",
+    icon: <Livewire size={38} />,
+  },
+  {
+    title: "AlpineJs",
+    icon: <Alpinedotjs size={38} />,
+  },
+  {
+    title: "Tailwind",
+    icon: <Tailwindcss size={38} />,
+  },
+  {
+    title: "React",
+    icon: <ReactJs size={38} />,
+  },
+  {
+    title: "Redux",
+    icon: <Redux size={38} />,
+  },
+  {
+    title: "Vue",
+    icon: <Vuedotjs size={38} />,
+  },
+  {
+    title: "Docker",
+    icon: <Docker size={38} />,
+  },
+  {
+    title: "linux / unix",
+    icon: <FaLinux size={38} />,
+  },
+  {
+    title: "Centos",
+    icon: <FaCentos size={38} />,
+  },
+  {
+    title: "MYSQL / POSTGRESQL",
+    icon: <Postgresql size={38} />,
   },
 ];
 
@@ -132,7 +178,6 @@ const bio = (
 
 const experience = (
   <section className="my-8 w-full  ">
-    <a href="#activity">Test</a>
     <h3 className="p-2 bg-amber-900 uppercase">Experience</h3>
     {experienceinfo.map((expinfo, key) => {
       return (
@@ -175,7 +220,9 @@ const skill_1 = (
     <article className="flex flex-wrap gap-1 justify-between">
       {skill1data.map((s1, key) => {
         return (
-          <div key={key} className="uppercase text-xl rounded-full border-4 border-red-500 py-3 p-2 h-full">
+          <div
+            key={key}
+            className="uppercase text-xl w-20 rounded-full border-4 border-red-500 flex justify-center items-center h-20">
             <span className="p-1">{s1.title}</span>
           </div>
         );
@@ -189,12 +236,14 @@ const skill_tech = (
     <h3 id="techskill" className="p-2 my-8 bg-amber-900 uppercase">
       Technical Skill
     </h3>
-    <article className="flex flex-wrap gap-1 justify-between">
+    <article className="flex flex-col gap-1 place-content-start">
       {skilltechdata.map((st, key) => {
         return (
-          <div key={key} className="uppercase text-md flex flex-wrap gap-2 mx-auto ">
-            <span className="p-1">{st.title}</span>
-            <span className="p-1 text-amber-600">{st.icon}</span>
+          <div key={key} className="w-full flex uppercase text-md  gap-2  ">
+            <div className="flex w-full justify-between">
+              <span className="p-1">{st.title}</span>
+              <span className="p-1 text-amber-600">{st.icon}</span>
+            </div>
           </div>
         );
       })}

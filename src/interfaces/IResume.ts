@@ -10,12 +10,12 @@ export interface IBioInfo {
   description: string;
 }
 
-interface IActivityInfo {
-  location: string;
+interface IEducationInfo {
+  level: string;
   descriptiom: string;
 }
 
-export interface IActivity {
+export interface IEducation {
   year: string;
-  infos: IActivityInfo[];
+  infos: IEducationInfo[];
 }

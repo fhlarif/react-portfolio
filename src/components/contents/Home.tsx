@@ -35,12 +35,14 @@ const Home = () => {
   );
 
   return (
-    <main className="grid  w-full rounded-xl">
+    <main className="grid w-full rounded-xl">
       {open.profile ? (
-        <>
-          <Profile />
-          {navbar}
-        </>
+        <div className="flex h-screen items-center">
+          <div>
+            <Profile />
+            {navbar}
+          </div>
+        </div>
       ) : null}
 
       {open.resume ? (

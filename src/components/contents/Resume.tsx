@@ -216,11 +216,11 @@ const skillmanagementdata: TSkillTech[] = [
 const skilllangdata: TSkillTech[] = [
   {
     title: "Malay",
-    icon: <span>MY</span>,
+    icon: <span className="text-xl font-extrabold">MY</span>,
   },
   {
     title: "English",
-    icon: <span>MY</span>,
+    icon: <span className="text-xl font-extrabold">ENG</span>,
   },
 ];
 

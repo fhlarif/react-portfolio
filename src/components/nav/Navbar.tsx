@@ -2,7 +2,6 @@ import { ReactNode } from "react";
 import { AiFillContacts, AiOutlineFundProjectionScreen, AiOutlineMessage } from "react-icons/ai";
 import { FaPaperclip } from "react-icons/fa";
 import { IOpen } from "../../interfaces/Iopen";
-import { motion } from "framer-motion";
 
 type Props = {
   open?: IOpen;

@@ -389,7 +389,12 @@ const Resume = (): JSX.Element => {
       initial={{ opacity: 0, scale: 0.5 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.4 }}
-      className="w-full gap-4 grid md:grid-cols-2  tracking-wide font-bold p-4 ">
+      className="w-full  max-w-5xl mx-auto h-full gap-4 grid md:grid-cols-2 mb-4 tracking-wide font-bold p-4 ">
+      <div>
+        <div className="md:grid hidden">{bio}</div>
+        {experience}
+        {education}
+      </div>
       <div>
         <div className="md:hidden grid">{bio}</div>
         {skill_1}
@@ -397,11 +402,6 @@ const Resume = (): JSX.Element => {
         {skill_support}
         {skill_management}
         {skill_lang}
-      </div>
-      <div>
-        <div className="md:grid hidden">{bio}</div>
-        {experience}
-        {education}
       </div>
     </motion.div>
   );

@@ -8,7 +8,7 @@ export const Profile = (): JSX.Element => {
       initial={{ opacity: 0, scale: 0.5 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.4 }}
-      className="flex self-center items-center shadow-gray-800 shadow-lg md:items-baseline p-4  md:flex-row flex-col justify-center bg-slate-800  rounded-xl border-4 border-gray-900">
+      className=" max-w-5xl mx-auto h-full sm:items-center flex items-center shadow-gray-800 shadow-lg p-4  flex-col justify-center bg-slate-800  rounded-xl border-4 border-gray-900">
       <div className=" flex gap-4 flex-col ">
         <img className=" self-center h-32 rounded-full" src="/assets/Fathul Arif.png" alt="Fathul Arif" />
         <p className="font-bold text-center uppercase text-lg">
@@ -16,7 +16,7 @@ export const Profile = (): JSX.Element => {
         </p>
         <Sosial />
       </div>
-      <div className="md:mt-10 mt-4 self-start">
+      <div className="md:mt-10 mt-4 w-full">
         <About />
       </div>
     </motion.header>
@@ -35,7 +35,7 @@ const quote = (
 );
 const About = () => {
   return (
-    <section className="  md:pl-8 justify-center items-center flex flex-col">
+    <section className="w-full  md:pl-8 justify-center items-center flex flex-col">
       <ul className="text-sm flex flex-col  md:flex-row gap-2 md:gap-8 self-center capitalize md:text-md">
         <li className="text-rose-200 lowercase">
           <span className="gap-1 flex items-center">
@@ -48,11 +48,11 @@ const About = () => {
           </span>
         </li>
       </ul>
-      <p className="text-center md:text-start md:w-96 pt-4 md:pt-8 text-md md:text-md font-bold">
+      <p className="text-center pt-4 md:pt-8 text-md md:text-md font-bold">
         An Information Technology Officer at IIUM. Skilled in troubleshooting and debugging. Creative, resourceful and
         flexible
       </p>
-      <p className="italic text-md tracking-wide pt-2 text-amber-400 text-center md:text-start md:w-96  md:pt-8 text-md md:text-md font-bold">
+      <p className="italic my-4 text-md tracking-wide pt-2 text-amber-400 text-center  md:pt-8 text-md md:text-md font-bold">
         Take what is given freely, enjoin what is good, and turn away from the ignorant.(7:199)
       </p>
     </section>

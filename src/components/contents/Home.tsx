@@ -4,6 +4,7 @@ import Navbar from "../nav/Navbar";
 import { Profile } from "./Profile";
 import Resume from "./Resume";
 import { motion } from "framer-motion";
+import Portfolio from "./Portfolio";
 
 const Home = () => {
   const [open, setOpen] = useState<IOpen>({
@@ -35,18 +36,27 @@ const Home = () => {
   );
 
   return (
-    <main className="grid  w-full rounded-xl">
+    <main className="grid w-full rounded-xl">
       {open.profile ? (
-        <>
-          <Profile />
-          {navbar}
-        </>
+        <div className="flex h-screen items-center">
+          <div>
+            <Profile />
+            {navbar}
+          </div>
+        </div>
       ) : null}
 
       {open.resume ? (
         <>
           {navbar}
           <Resume />
+        </>
+      ) : null}
+
+      {open.portfolio ? (
+        <>
+          {navbar}
+          <Portfolio />
         </>
       ) : null}
     </main>

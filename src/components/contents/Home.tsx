@@ -4,6 +4,7 @@ import Navbar from "../nav/Navbar";
 import { Profile } from "./Profile";
 import Resume from "./Resume";
 import { motion } from "framer-motion";
+import Portfolio from "./Portfolio";
 
 const Home = () => {
   const [open, setOpen] = useState<IOpen>({
@@ -49,6 +50,13 @@ const Home = () => {
         <>
           {navbar}
           <Resume />
+        </>
+      ) : null}
+
+      {open.portfolio ? (
+        <>
+          {navbar}
+          <Portfolio />
         </>
       ) : null}
     </main>

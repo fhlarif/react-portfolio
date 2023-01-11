@@ -389,7 +389,7 @@ const Resume = (): JSX.Element => {
       initial={{ opacity: 0, scale: 0.5 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.4 }}
-      className="w-full gap-4 h-[44rem] grid md:grid-cols-2  tracking-wide font-bold p-4 ">
+      className="w-full gap-4 grid md:grid-cols-2  tracking-wide font-bold p-4 ">
       <div>
         <div className="md:hidden grid">{bio}</div>
         {skill_1}

@@ -107,7 +107,7 @@ const skill1data: TSkill1[] = [
     title: "api",
   },
   {
-    title: "cms",
+    title: "tdd",
   },
   {
     title: "ssr",

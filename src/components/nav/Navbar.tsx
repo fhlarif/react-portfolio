@@ -51,16 +51,6 @@ const Navbar = ({ open, handleOpen }: Props): JSX.Element => {
           </div>
         </Nav>
       </div>
-      <div className={"w-full cursor-pointer"} onClick={() => handleOpen?.("contact")}>
-        <Nav open={open}>
-          <div className="flex gap-2">
-            <span className="text-amber-500">
-              <AiOutlineMessage size={25} />
-            </span>
-            <span className={open?.contact ? "text-amber-600 underline" : ""}>Contact</span>
-          </div>
-        </Nav>
-      </div>
     </nav>
   );
 };

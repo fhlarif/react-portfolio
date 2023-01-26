@@ -5,6 +5,7 @@ import { Profile } from "./Profile";
 import Resume from "./Resume";
 import { motion } from "framer-motion";
 import Portfolio from "./Portfolio";
+import { AiOutlineArrowUp } from "react-icons/ai";
 
 const Home = () => {
   const [open, setOpen] = useState<IOpen>({
@@ -36,7 +37,7 @@ const Home = () => {
   );
 
   return (
-    <main className="grid w-full rounded-xl">
+    <main className="grid w-full rounded-xl" id="top">
       {open.profile ? (
         <div className="flex h-screen items-center">
           <div>
@@ -45,20 +46,23 @@ const Home = () => {
           </div>
         </div>
       ) : null}
-
       {open.resume ? (
         <>
           {navbar}
           <Resume />
         </>
       ) : null}
-
       {open.portfolio ? (
         <>
           {navbar}
           <Portfolio />
         </>
       ) : null}
+      <a
+        href="#top"
+        className="absolute bottom-0 right-0 h-12 w-12 z-30 bg-amber-800 flex items-center justify-center rounded-full">
+        <AiOutlineArrowUp size={25} />
+      </a>
     </main>
   );
 };

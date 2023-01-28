@@ -61,7 +61,7 @@ const experienceinfo: IExpInfo[] = [
   {
     year: "2017",
     position: "BOOTCAMPER, INTERN",
-    description: "ServiceRocket Sdn Bhd, Kuala Lumpur: Worked as an IT researcher",
+    description: "ServiceRocket Sdn Bhd, Kuala Lumpur: Trained in IT Support for Jira and Confluence",
   },
 ];
 

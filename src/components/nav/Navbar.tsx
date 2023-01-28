@@ -20,7 +20,7 @@ const Nav = ({ open, children }: Props) => {
 const Navbar = ({ open, handleOpen }: Props): JSX.Element => {
   return (
     <nav className="m-4 flex md:flex-row flex-col gap-2 uppercase w-full mx-auto">
-      <div className={"w-full cursor-pointer"} onClick={() => handleOpen?.("profile")}>
+      <a href="#top" className={"w-full cursor-pointer"} onClick={() => handleOpen?.("profile")}>
         <Nav open={open}>
           {" "}
           <div className="flex gap-2">
@@ -30,8 +30,8 @@ const Navbar = ({ open, handleOpen }: Props): JSX.Element => {
             <span className={open?.profile ? "text-amber-600 underline" : ""}>Profile</span>
           </div>
         </Nav>
-      </div>
-      <div className={"w-full cursor-pointer"} onClick={() => handleOpen?.("resume")}>
+      </a>
+      <a href="#top" className={"w-full cursor-pointer"} onClick={() => handleOpen?.("resume")}>
         <Nav open={open}>
           <div className="flex gap-2">
             <span className="text-amber-500">
@@ -40,8 +40,8 @@ const Navbar = ({ open, handleOpen }: Props): JSX.Element => {
             <span className={open?.resume ? "text-amber-600 underline" : ""}>Resume</span>
           </div>
         </Nav>
-      </div>
-      <div className={"w-full cursor-pointer"} onClick={() => handleOpen?.("portfolio")}>
+      </a>
+      <a href="#top" className={"w-full cursor-pointer"} onClick={() => handleOpen?.("portfolio")}>
         <Nav open={open}>
           <div className="flex gap-2">
             <span className="text-amber-500">
@@ -50,7 +50,7 @@ const Navbar = ({ open, handleOpen }: Props): JSX.Element => {
             <span className={open?.portfolio ? "text-amber-600 underline" : ""}>Portfolio</span>
           </div>
         </Nav>
-      </div>
+      </a>
     </nav>
   );
 };

@@ -58,11 +58,11 @@ const Home = () => {
           <Portfolio />
         </>
       ) : null}
-      <a
-        href="#top"
-        className="absolute bottom-0 right-0 h-12 w-12 z-30 bg-amber-800 flex items-center justify-center rounded-full">
-        <AiOutlineArrowUp size={25} />
-      </a>
+      <span className="flex justify-end sticky bottom-0 right-0">
+        <a href="#top" className="  h-12 w-12 z-30 bg-amber-800 flex items-center justify-center rounded-full ">
+          <AiOutlineArrowUp size={25} />
+        </a>
+      </span>
     </main>
   );
 };

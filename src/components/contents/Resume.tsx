@@ -38,9 +38,9 @@ const bioinfo: IBioInfo = {
 const experienceinfo: IExpInfo[] = [
   {
     year: "2020-present",
-    position: "It Officer",
+    position: "IT OFFICER",
     description:
-      "IUM Gombak, Selangor: Manage IT projects and resolved ICT operational issu registered via the Service Desk System",
+      "IIUM Gombak, Selangor: Manage IT projects and resolved ICT operational issues registered via the Service Desk System",
   },
   {
     year: "2019",

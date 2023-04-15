@@ -19,6 +19,7 @@ const projects: TPortfolio[] = [
     year: "Apr 2022 - Oct 2022",
     description:
       "Revamped RMC's website by developing custom Content Management System for RMC; enabling content approval workflow and acted as a one-stop centre for communication between researchers and RMC ",
+    link: "https://research.iium.edu.my",
   },
   {
     title: "Sponsored and Joint Research Registration Module",

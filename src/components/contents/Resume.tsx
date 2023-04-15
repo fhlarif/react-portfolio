@@ -13,18 +13,18 @@ import {
   FaWrench,
 } from "react-icons/fa";
 import {
-  Postgresql,
-  Livewire,
-  Alpinedotjs,
-  Tailwindcss,
-  ReactJs,
-  Vuedotjs,
-  Docker,
-  Redux,
-  Laragon,
-  Clickup,
-  Obsidian,
-  Visualstudiocode,
+  Sipostgresql,
+  Silivewire,
+  Sialpinedotjs,
+  Sitailwindcss,
+  Sireact,
+  Sivuedotjs,
+  Sidocker,
+  Siredux,
+  Silaragon,
+  Siclickup,
+  Siobsidian,
+  Sivisualstudiocode,
 } from "@icons-pack/react-simple-icons";
 import { IEducation, IBioInfo, IExpInfo } from "../../interfaces/IResume";
 
@@ -129,31 +129,31 @@ const skilltechdata: TSkillTech[] = [
   },
   {
     title: "Livewire",
-    icon: <Livewire size={38} />,
+    icon: <Silivewire size={38} />,
   },
   {
     title: "AlpineJs",
-    icon: <Alpinedotjs size={38} />,
+    icon: <Sialpinedotjs size={38} />,
   },
   {
     title: "Tailwind",
-    icon: <Tailwindcss size={38} />,
+    icon: <Sitailwindcss size={38} />,
   },
   {
     title: "React",
-    icon: <ReactJs size={38} />,
+    icon: <Sireact size={38} />,
   },
   {
     title: "Redux",
-    icon: <Redux size={38} />,
+    icon: <Siredux size={38} />,
   },
   {
     title: "Vue",
-    icon: <Vuedotjs size={38} />,
+    icon: <Sivuedotjs size={38} />,
   },
   {
     title: "Docker",
-    icon: <Docker size={38} />,
+    icon: <Sidocker size={38} />,
   },
   {
     title: "linux / unix",
@@ -165,11 +165,11 @@ const skilltechdata: TSkillTech[] = [
   },
   {
     title: "MYSQL / POSTGRESQL",
-    icon: <Postgresql size={38} />,
+    icon: <Sipostgresql size={38} />,
   },
   {
     title: "VS Code",
-    icon: <Visualstudiocode size={38} />,
+    icon: <Sivisualstudiocode size={38} />,
   },
   {
     title: "GitLab",
@@ -177,7 +177,7 @@ const skilltechdata: TSkillTech[] = [
   },
   {
     title: "Laragon",
-    icon: <Laragon size={38} />,
+    icon: <Silaragon size={38} />,
   },
   {
     title: "Markdown",
@@ -185,11 +185,11 @@ const skilltechdata: TSkillTech[] = [
   },
   {
     title: "Clickup",
-    icon: <Clickup size={38} />,
+    icon: <Siclickup size={38} />,
   },
   {
     title: "Obsidian",
-    icon: <Obsidian size={38} />,
+    icon: <Siobsidian size={38} />,
   },
 ];
 

@@ -15,6 +15,7 @@ import {
 import {
   Sipostgresql,
   Silivewire,
+  Sitypescript,
   Sialpinedotjs,
   Sitailwindcss,
   Sireact,
@@ -146,6 +147,10 @@ const skilltechdata: TSkillTech[] = [
   {
     title: "Redux",
     icon: <Siredux size={38} />,
+  },
+  {
+    title: "TypeScript",
+    icon: <Sitypescript size={38} />,
   },
   {
     title: "Vue",
@@ -307,7 +312,7 @@ const skill_1 = (
 
 const skill_tech = (
   <section className="w-full">
-    <h3 id="techskill" className="p-2 my-8 bg-amber-900 uppercase">
+    <h3 id="techskill" className="p-2 my-4 bg-amber-900 uppercase">
       Technologies
     </h3>
     <article className="flex flex-col gap-1 place-content-start">
@@ -327,7 +332,7 @@ const skill_tech = (
 
 const skill_support = (
   <section className="w-full">
-    <h3 id="techskill" className="p-2 my-8 bg-amber-900 uppercase">
+    <h3 id="techskill" className="p-2 my-4 bg-amber-900 uppercase">
       Support Skills
     </h3>
     <article className="flex flex-col gap-1 place-content-start">
@@ -346,7 +351,7 @@ const skill_support = (
 );
 const skill_management = (
   <section className="w-full">
-    <h3 id="techskill" className="p-2 my-8 bg-amber-900 uppercase">
+    <h3 id="techskill" className="p-2 my-4 bg-amber-900 uppercase">
       Management Skills
     </h3>
     <article className="flex flex-col gap-1 place-content-start">
@@ -365,7 +370,7 @@ const skill_management = (
 );
 const skill_lang = (
   <section className="w-full">
-    <h3 id="techskill" className="p-2 my-8 bg-amber-900 uppercase">
+    <h3 id="techskill" className="p-2 my-4 bg-amber-900 uppercase">
       Language Skills
     </h3>
     <article className="flex flex-col gap-1 place-content-start">
